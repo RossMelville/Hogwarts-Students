@@ -8,16 +8,22 @@ def initialize( options )
   @id = options['id'].to_i
   @first_name = options['first_name']
   @last_name = options['last_name']
-  # @house_id = options['house_id'].to_i
+  @house_id = options['house_id'].to_i
 end
 
 def save()
-  sql = "INSERT INTO students (first_name, last_name)
+  sql = "INSERT INTO students (first_name, last_name, house_id)
   VALUES
-  ('#{@first_name}', '#{@last_name}')
+  ('#{@first_name}', '#{@last_name}', #{@house_id})
   RETURNING id;"
   new_student = SqlRunner.run(sql).first
   @id = new_student['id'].to_i
+end
+
+def find_house()
+  sql = "SELECT FROM houses WHERE id = #{@house_id}"
+  result = SqlRunner.run(sql).first
+  return result
 end
 
 
