@@ -21,8 +21,9 @@ def save()
 end
 
 def find_house()
-  sql = "SELECT FROM houses WHERE id = #{@house_id}"
-  result = SqlRunner.run(sql).first
+  sql = "SELECT * FROM houses WHERE id = #{@house_id}"
+  house = SqlRunner.run(sql).first
+  result = House.new( house )
   return result
 end
 
@@ -31,8 +32,8 @@ end
 
 def self.find(id)
   sql = "SELECT * FROM students WHERE id = #{id};"
-  student = SqlRunner.run(sql)
-  result = Student.new( student.first )
+  student = SqlRunner.run(sql).first
+  result = Student.new( student )
   return result
 end
 

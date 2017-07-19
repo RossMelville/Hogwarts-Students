@@ -16,7 +16,7 @@ house4 = House.new ({'name' => 'Slytherin', 'logo' => 'slytherin.jpg'} )
 house4.save()
 
 
-student1 = Student.new ({'first_name' => 'Harry', 'last_name' => 'Potter', 'house_id' => '14'})
-student1.save()
-student2 = Student.new ({'first_name' => 'Ron', 'last_name' => 'Weasley', 'house_id' => '15' })
-student2.save()
+# student1 = Student.new ({'first_name' => 'Harry', 'last_name' => 'Potter', 'house_id' => '14'})
+# student1.save()
+# student2 = Student.new ({'first_name' => 'Ron', 'last_name' => 'Weasley', 'house_id' => '15' })
+# student2.save()
