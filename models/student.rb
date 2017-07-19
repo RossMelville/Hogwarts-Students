@@ -20,15 +20,15 @@ def save()
   @id = new_student['id'].to_i
 end
 
+
+
+
 def self.find(id)
   sql = "SELECT * FROM students WHERE id = #{id};"
   student = SqlRunner.run(sql)
   result = Student.new( student.first )
   return result
 end
-
-
-
 
 def self.all()
 sql = 'SELECT * FROM students'
