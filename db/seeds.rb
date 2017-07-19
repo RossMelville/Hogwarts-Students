@@ -10,3 +10,4 @@ student2 = Student.new ({'first_name' => 'Ron', 'last_name' => 'Weasley'})
 student2.save()
 
 p Student.all()
+p Student.find(34)
