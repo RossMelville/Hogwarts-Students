@@ -11,6 +11,15 @@ def initialize( options )
   @house_id = options['house_id'].to_i
 end
 
+def save()
+  sql = "INSERT INTO students (first_name, last_name, house_id)
+  VALUES
+  '#{@first_name}', '#{@last_name}', #{@house_id}
+  RETURNING id;"
+  new_student = SqlRunner.run(sql).first
+  @id = new_student['id'].to_i
+end
+
 
 
 
